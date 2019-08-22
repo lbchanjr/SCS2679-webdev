@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">  
+    <title>Cinema Watch (SCS2679 - Final Project)</title>  
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+
+  </head>
+  <body id="body_id">
+    <h3>Redirecting to Cinexplex website...</h3>
+    <div id="link_id" style="display:none;">
+    </div>
+    <script type="text/javascript">
+      // var urlToOpen;
+      var theaterArr = localStorage.getItem("theater_urls").split(',');
+      
+      var theaterIdx = parseInt(localStorage.getItem("selectedtheateridx"));
+      var urlToOpen = "<a href=\"" + theaterArr[theaterIdx] + "\" id=\"url_id\">" +
+        theaterArr[theaterIdx] + "</a>";
+
+      document.getElementById("link_id").innerHTML = urlToOpen;
+
+      document.getElementById("url_id").click();  
+
+
+      // if(localStorage.getItem("selectedtheateridx") != null) {
+      //   var theaterIdx = parseInt(localStorage.getItem("selectedtheateridx"));
+      //   urlToOpen = theaterArr[theaterIdx];
+      // }
+      // else {
+      //   urlToOpen = theaterArr[0];
+      // }
+      // window.open(urlToOpen, "_self");
+    </script>
+    
+  </body>
+</html>

@@ -1,0 +1,54 @@
+
+/* Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+#map {
+height: 85%;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+height: 95%;
+margin: 0;
+padding: 0;
+background-color: #D7E3F7;
+}
+
+#footnote, #maptitle {
+	text-align: center;
+}
+
+
+/* landscape styles go here */
+@media screen and (min-aspect-ratio: 13/9) { 
+  #footnote {
+	font-size: 12px
+  }
+
+  #maptitle {
+  	font-size: 32px
+  }
+
+}
+
+/* On smaller screens, where width is less than 650px and in landscappe orientation, 
+   change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-width: 650px) and (min-aspect-ratio: 13/9) {
+  #maptitle {
+  	font-size: 16px
+
+  }
+  #map {
+	height: 80%;
+  }
+}
+
+/* portrait styles go here */
+@media screen and (max-aspect-ratio: 13/9) { 
+  #footnote {
+  	font-size: 11px
+  }
+
+  #maptitle {
+  	font-size: 16px
+  }
+	
+}

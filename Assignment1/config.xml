@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "com.phonegap.example"
+    versionCode = "10"
+    version     = "1.0.0" >
+
+<!-- versionCode is optional and Android only -->
+
+  <name>Cinema Watch Review Form</name>
+
+  <description>
+      A phonegap app display the form for SCS2679 Assignment #1.
+  </description>
+
+  <author href="http://louisechan.byethost8.com/scs2679/submitreview.html" email="lbchan525@gmail.com">
+      Louise Chan
+  </author>
+
+</widget>

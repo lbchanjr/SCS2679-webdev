@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+   			<title>Review - Cinema Watch</title>
+		</head>
+		<body>
+			<script type="text/javascript" src="cordova.js"></script>
+			<style>
+				label,dl { display: block } 
+				input[type=text],input[type=email],input[type=url],input[type=number],select,textarea { margin-bottom: 20px; width: 97% }
+				::-webkit-input-placeholder {
+				color: lightgray;
+				}
+
+				input[type=radio],input[type=checkbox] { margin-bottom: 20px}
+				}
+
+				input[type=reset],input[type=submit] {width: 30% }
+				
+			</style>
+
+			<header>
+				<h1>Submit a review</h1>
+			</header>
+
+			<form action="#" method="post">
+				<label for="name_id">Name</label>
+				<input type="text" id="name_id" name="name" maxlength="30" placeholder="e.g. John Doe" required/>
+
+				<label for="email_id">E-mail</label>
+				<input type="email" id="email_id" name="email" placeholder="e.g. johndoe@gmail.com" required/>
+
+				<label for="submiturl_id">URL</label>
+				<input type="url" id="submiturl_id" name="submiturl" placeholder="e.g. http://www.johndoe.com" />
+
+				<label for="birth_id">Birthdate</label>
+				<input placeholder="Enter birthday" class="textbox-n" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="birth_id" style="width:97%" />
+				<!--input type="date" id="birth_id" name="birthday" /-->
+				<!--input type="number" name="birthday" min="1900" max="2099" step="1"/-->
+
+				<dl>
+					<dt>Gender</dt>
+				<dd><input type="radio" name="gender" id="male_id" value="male">Male</dd>
+			  	<dd><input type="radio" name="gender" id="female_id" value="female">Female</dd>
+			  	<dd><input type="radio" name="gender" id="other_id" value="other">Other</dd>
+
+				<label for="mov_id">Movie Name</label>
+				<input type="text" id="mov_id" name="movie" placeholder="e.g. John Wick" required />
+			  	<label for="review_id">Review</label>
+				<textarea id="review_id" name="review" placeholder="Say something about the movie..." required></textarea>
+
+				<label for="rate_id">Rating</label>
+				<select id="rate_id" name="rating" required>
+					<option value="" style="display:none;color:lightgray">---</option>
+					<option value="">1 out of 5 stars</option>
+					<option value="">2 out of 5 stars</option>
+					<option value="">3 out of 5 stars</option>
+					<option value="">4 out of 5 stars</option>
+					<option value="">5 out of 5 stars</option>
+				</select>
+				<br />
+
+				<input type="checkbox" id="chk" name="chk" required/>I confirm that all data entered in this form are fictitious.<br />
+
+				<input type="submit" value="Submit"> 
+
+				<input type="reset" value="Clear All" style="margin-left: 10%">
+
+			</form>
+
+		</body>
+
+	</html>

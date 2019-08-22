@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+   			<title>Cinema Watch (SCS2679 - Final Project)</title>
+			<link rel="icon" href="img/favicon.png">
+   			<link rel="stylesheet" href="css/style.css?v0.45" />
+			<script src="https://hammerjs.github.io/dist/hammer.js"></script>
+<!-- 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ -->			<script src="js/main.js?v0.23"></script>
+		<!-- 	<script>
+				$(document).ready(function(){
+   
+   					$('#content').load("theaters.html");
+
+				});
+			</script> -->
+			<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+		</head>
+
+		<body id="bodyid">
+			
+			<script type="text/javascript">
+				var hasVibrate = "vibrate" in navigator;
+				localStorage.clear();
+				window.onorientationchange = function() { 
+					window.location.reload(); 
+				};
+			</script>
+
+			<div id="mySidebar" class="sidebar">
+			  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			  <a href="javascript:void(0)" onclick="showHTMLframe(1)">Nearby Theaters</a>
+			  <a href="javascript:void(0)" onclick="showHTMLframe(2)">Now Playing</a>
+			  <a href="javascript:void(0)" onclick="showHTMLframe(3)">Show Times</a>
+			  <a href="javascript:void(0)" onclick="showHTMLframe(4)">Visit Theater URL</a>
+			  <a href="javascript:void(0)" onclick="showHTMLframe(5)" id="phone_id">Call Theater</a>
+
+			  <label id="lab_theater" class="theater" for="sel_theater">Select Theater:</label>
+			  <select disabled class="theater" id="sel_theater" onchange="theaterChange()"></select>
+			  <label id="lab_movie" class="movie" for="sel_movie">Select Movie:</label>
+			  <select disabled class="movie" id="sel_movie" onchange="movieChange()"></select>
+			</div>
+
+			<div id="main">
+			  <button class="openbtn" onclick="openNav()">&#9776; Menu</button> 
+			  <div id="content">
+			  </div>		  
+			</div>
+
+
+			<!--div class="pagination" id="pageid">
+				<a href="#">&laquo;</a>
+				<a class="active" href="#">1</a>
+				<a href="#">2</a>
+				<a href="#">3</a>
+				<a href="#">4</a>
+				<a href="#">5</a>
+				<a href="#">&raquo;</a>
+			</div-->
+			
+			<script type="text/javascript">
+	     		showHTMLframe(1);
+	     		// document.getElementById("content").innerHTML='<object id="objhtml" type="text/html" data="theaters.html"></object>';
+
+	    //  		alert("DEBUG: Screen width = " + screen.width + "\nSidebar width = " +
+					// document.getElementById("mySidebar").style.width);
+
+			</script>
+			
+		</body>
+
+
+	</html>
