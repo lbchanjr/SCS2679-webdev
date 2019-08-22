@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+   			<title>Submit Review - Cinema Watch</title>
+			<link rel="icon" href="img/favicon.png">
+   			<link rel="stylesheet" href="css/style.css" />
+			<script src="js/prefixfree.js"></script>
+			<script src="js/modernizr-custom.js"></script>
+			<script src="js/detect.js"></script>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		</head>
+
+		<body>
+			<header>
+				<!-- Status messages for "progress" element detection-->
+				<div id="pbardiv_id">
+					<p><b>Progress Bar Status:</b> Progress bar is supported! Displaying progress bar at 60%...</p>
+					<label for="pbar_id"> Progress: </label>
+					<progress id="pbar_id" value="0" max="100"></progress>
+				</div>
+				<div id="ptextdiv_id">
+					<p> <b>Progress Bar Status:</b> Progress bar is <b>NOT</b> supported! Displaying percentage in text instead...</p>
+					<p id="ptext_id"><b>Progress: 0%</b></p>
+				</div>
+
+				<!-- Status messages for Geolocation API detection-->
+				<div id="geodetect">
+					<p id="geodetect_yes"><b>Geolocation Status:</b> Geolocation API is supported!</p>
+					<p id="geodetect_no"><b>Geolocation Status:</b> Geolocation API is <b>NOT</b> supported!</p>
+				</div>
+			
+
+				<script type="text/javascript">
+					detectProgbarInit();
+					detectGeoLocation();
+        		</script> 
+
+				<h1>Submit a review</h1>
+			</header>
+
+			<section>
+			<form action="#" method="post">
+				<br />
+				<label for="name_id">Name</label>
+				<input type="text" id="name_id" name="name" maxlength="30" placeholder="e.g. John Doe" required/>
+
+				<label for="email_id">E-mail</label>
+				<input type="email" id="email_id" name="email" placeholder="e.g. johndoe@gmail.com" required/>
+
+				<label for="submiturl_id">URL</label>
+				<input type="url" id="submiturl_id" name="submiturl" placeholder="e.g. http://www.johndoe.com" />
+
+				<label for="birth_id">Birthdate</label>
+				<input placeholder="Enter birthday" class="textbox-n" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="birth_id" style="width:97%" />
+				<!--input type="date" id="birth_id" name="birthday" /-->
+				<!--input type="number" name="birthday" min="1900" max="2099" step="1"/-->
+
+				<dl>
+					<dt>Gender</dt>
+						<dd><input type="radio" name="gender" id="male_id" value="male">Male</dd>
+			  			<dd><input type="radio" name="gender" id="female_id" value="female">Female</dd>
+			  			<dd><input type="radio" name="gender" id="other_id" value="other">Other</dd>
+			  	</dl>
+				<label for="mov_id">Movie Name</label>
+				<input type="text" id="mov_id" name="movie" placeholder="e.g. John Wick" required />
+			  	<label for="review_id">Review</label>
+				<textarea id="review_id" name="review" placeholder="Say something about the movie..." required></textarea>
+
+				<label for="rate_id">Rating</label>
+				<select id="rate_id" name="rating" required>
+					<option value="" style="display:none;color:lightgray">---</option>
+					<option value="">1 out of 5 stars</option>
+					<option value="">2 out of 5 stars</option>
+					<option value="">3 out of 5 stars</option>
+					<option value="">4 out of 5 stars</option>
+					<option value="">5 out of 5 stars</option>
+				</select>
+				<br />
+
+				<input type="checkbox" id="chk" name="chk" required/>I confirm that all data entered in this form are fictitious.<br />
+
+				<input type="submit" value="Submit"> 
+
+				<input type="reset" value="Clear All">
+
+			</form>
+			</section>
+
+			<footer>
+				<p>
+					<br />
+					<i>This page was created by <b>Louise Chan</b> for Assignment #2 of the UoT-SCS 2679 - Mobile Compatible Web Programming course. 
+					<br />
+					&copy;2019 Louise Chan</i>	
+				</p>
+			</footer>
+		</body>
+
+	</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+   			<title>SCS2679 - Assignment 3</title>
+			<link rel="icon" href="img/favicon.png">
+   			<link rel="stylesheet" href="css/style.css?v1.00" />
+			<script src="https://hammerjs.github.io/dist/hammer.js"></script>
+   			<script src="js/map-cc.js?v=1.07"></script>
+   			<script src="js/battery.js?v=1.00"></script>
+   			<!--script src="js/gestures.js"></script>
+   			<script src="js/prefixfree.min.js"></script>
+			<script src="js/modernizr-custom.js"></script-->
+			<!--script src="js/detect.js"></script-->
+			<!--script async defer
+    			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpnAroegDOkK7_p7IW-niAbkPx3ZFJDS0&callback=initMap">
+    		</script-->
+			<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+		</head>
+
+		<body>
+			<div>
+				User age: <input id="userage" type="number" min="5" max="100" step="1" value="25"> <br />
+				<input type="button" value="See my location" onclick="buttonClicked()" id="geolocbutton"/>
+				<input type="button" value="Check battery status" onclick="battClicked()"/>
+				<!--div id="gesturebox"-->
+				<img id="gesturebox" src="img/target.jpg" alt="Target icon" width="50"/>
+	    		<!--/div-->
+			</div>
+
+			<div id="nogeoloc">
+				<p id="nogeomsg"> Geolocation is not supported by browser! Please select province name from the list below.</p>
+				Select Canadian Province: <select id="s" name="s" onchange="selectProvince()">
+					<option value="" selected="selected">---</option>
+					<option value="Ontario">Ontario</option>
+					<option value="Quebec">Quebec</option>
+					<option value="Nova Scotia">Nova Scotia</option>
+					<option value="New Brunswick">New Brunswick</option>
+					<option value="Manitoba">Manitoba</option>
+					<option value="British Columbia">British Columbia</option>
+					<option value="Prince Edward Island">Prince Edward Island</option>
+					<option value="Saskatchewan">Saskatchewan</option>
+					<option value="Alberta">Alberta</option>
+					<option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+				</select>				
+				<!--input type="button" value="Submit" onclick="submitProvince()" id="submit"/-->
+			</div>
+					
+			<h3>Your current location</h3>
+    		<!--The div element for the map -->
+    		<div id="map_id">Click on the "See my location" button to view your location.</div>
+
+    		<div id="prov_info">
+    			<div id=provname>
+    			</div>
+    			<div id=provpremier>
+    			</div>
+    			<div id=provtax>
+    			</div>
+    			<div id=provattr>
+    			</div>
+    		</div>
+
+    		<script type="text/javascript">
+    			window.scrollTo(0, 0);
+    			var bordernum = 2;
+    			var bordercnum = 2;
+				var borderstyles = ["none", "solid", "double", "dotted", "dashed"];
+				var bordercolors = ["yellow", "red", "lightgray", "blue", "green", "cyan"]
+				var myElement = document.getElementById('gesturebox'); 
+
+				var supportsVibrate = "vibrate" in navigator;
+				// create a simple instance
+				// by default, it only adds horizontal recognizers
+				var mc = new Hammer(myElement);
+
+				// listen to events...
+				mc.on("panleft panright tap", function(ev) {
+					switch (ev.type) {
+						case "tap": 
+							bordernum += 1;
+							if(bordernum >= borderstyles.length) {
+								bordernum = 0;
+							}
+				
+							if(supportsVibrate) {
+								navigator.vibrate(250);
+							}
+							break;
+						case "panleft":
+							
+							if(bordercnum == 0) {
+								bordercnum = bordercolors.length-1;
+							}
+							else {
+								bordercnum -= 1;
+							}
+
+							if(supportsVibrate) {
+								navigator.vibrate(500);
+							}
+							break;
+						case "panright":
+							bordercnum += 1;
+							if(bordercnum >= bordercolors.length) {
+								bordercnum = 0;
+							}
+							if(supportsVibrate) {
+								navigator.vibrate(500);
+							}
+							break;
+					}	
+
+					var map_element = document.getElementById('map_id');
+					map_element.style.borderStyle = borderstyles[bordernum];
+					map_element.style.borderColor = bordercolors[bordercnum];
+					document.getElementById('prov_info').style.backgroundColor = bordercolors[bordercnum];
+					//window.alert("event = "+ev.type+" border = "+borderstyles[bordernum]);
+				});
+    		</script>
+		</body>
+
+	</html>

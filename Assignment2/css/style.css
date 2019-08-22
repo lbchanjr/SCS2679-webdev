@@ -1,0 +1,60 @@
+label,dl { 
+	display: block 
+} 
+
+input[type=text],input[type=email],input[type=url],input[type=number],select,textarea { 
+	margin-bottom: 10px; 
+	width: 97%; 
+}
+::input-placeholder {
+	color: lightgray;
+}
+
+input[type=radio],input[type=checkbox] { 
+	margin-bottom: 10px
+}
+
+input[type=submit] {
+	appearance: push-button;
+}
+
+input[type=reset] {
+	margin-left: 40px;
+	appearance: square-button;
+}
+
+/*input:hover {
+	background-color: yellow;
+}*/
+
+#pbardiv_id {
+	display: none;
+	background: green;
+}
+
+#ptextdiv_id {
+	display: none;
+	background: red;
+}
+
+#geodetect_yes {
+	display: none;
+	background: green;
+}
+
+#geodetect_no {
+	display: none;
+	background: red;
+}
+
+@media screen and (orientation:landscape){
+	body {
+  		background-image: linear-gradient(to bottom, #009999, #004444);
+	}
+}
+@media screen and (orientation:portrait) {
+	body {
+  		background-image: linear-gradient(to right, #999900, #444400);
+	}
+}
+

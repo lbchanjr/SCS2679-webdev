@@ -1,0 +1,80 @@
+html, body {
+	width: : 100%;
+	height: 100%;
+}
+
+#prov_info {
+	border-style: solid;
+	background-color: lightgray;
+	margin-top: 10px;
+	display: none;
+	font-size: 12px;
+}
+
+#gesturebox {
+	float: right;
+}
+
+@media screen and (orientation:landscape){
+	#provname {
+/*		float: left;
+		width: 45%;
+*/	}
+	#provpremier {
+/*		float: left;
+		margin-left: 50%;
+*/		/*background-image: linear-gradient(to bottom, #009999, #004444);*/
+	}
+	#provtax {
+/*		float: left;
+		margin-top: 20px;
+		width: 30%;
+*/		/*background-image: linear-gradient(to bottom, #009999, #004444);*/
+	}
+	#provattr {
+/*		float: left;
+		margin-top: 20px;
+		margin-left: 35%;
+*/
+	}
+}
+
+@media screen and (orientation:portrait) {
+	#provpremier {
+		/*margin-top: 20px;*/
+		/*background-image: linear-gradient(to right, #999900, #444400);*/
+	}
+	#provtax {
+		/*margin-top: 40px;*/
+
+	}
+	#provattr {
+		/*margin-top: 60px;*/
+
+	}
+}
+
+#nogeoloc {
+	margin-top: 10px;
+	display: none;	
+}
+
+#geolocbutton {
+	margin-top: 10px;
+}
+
+#nogeomsg {
+	color: red;
+	font-size: 12px
+}
+
+#map_id {
+		text-align: center;
+        background-color: gray;
+        height: 60%;  	/* The height will occupy 65% of the screen size*/
+        width: 100%;  	/* The width is the width of the web page */
+        border-style: double;
+        border-width: 2px;
+        border-color: gray;
+}
+
